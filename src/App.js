@@ -13,13 +13,6 @@ import ThingList from "./ThingList";
 // https://firebase.google.com/docs/web/setup?authuser=0
 //
 var firebaseConfig = {
-  apiKey: "AIzaSyAlTTdjRdmEt_UCHgqY7W4CiRNTht-Mv0M",
-  authDomain: "vueclass-106b7.firebaseapp.com",
-  databaseURL: "https://vueclass-106b7.firebaseio.com",
-  projectId: "vueclass-106b7",
-  storageBucket: "vueclass-106b7.appspot.com",
-  messagingSenderId: "800099862302",
-  appId: "1:800099862302:web:b184f740598a80c9"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
