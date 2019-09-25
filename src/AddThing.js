@@ -19,7 +19,7 @@ function AddThing({ initialValue, clear }) {
     }
   );
 
-  // if there is an initial value then load it and setThing with the 
+  // if there is an initial value then load it and setThing with the
   // value so it can be in the input field
   useEffect(() => {
     !loading && initialValue && value.exists && setThing(value.data().name);
@@ -30,18 +30,17 @@ function AddThing({ initialValue, clear }) {
    * by check to see if there was an initial value provided
    */
   const onSave = async () => {
+    let collectionRef = firebase.firestore().collection("things");
+
     if (initialValue) {
-      await firebase
-        .firestore()
-        .collection("things")
+      await collectionRef
         .doc(initialValue)
         .set({ name: thing, updatedOn: new Date().getTime() }, { merge: true });
       setThing("");
       clear();
     } else {
-      await firebase
-        .firestore()
-        .collection("things")
+      await collectionRef
+        .doc(initialValue)
         .add({ name: thing, createdOn: new Date().getTime() });
       setThing("");
       clear();
