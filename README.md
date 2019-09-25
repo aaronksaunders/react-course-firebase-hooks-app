@@ -8,7 +8,30 @@ Sample app integrating firebase with a react application using react hooks api a
 
 ## Getting A Collecting of Things
 
+This is from firebase-hooks, it allows us to query all of the item from the `things` collection in the database in descending order based on the creation data. the `value` will containg the results of the query that we will loop through to render the list items
+```javascript
+  const [value, loading, error] = useCollection(
+    firebase
+      .firestore()
+      .collection("things")
+      .orderBy("createdOn", "desc"),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true }
+    }
+  );
+```
 ## Getting a Specific Thing
+
+We use the firebase-hooks to get a specific object using the id of the object we want to retrieve
+```javascript
+  // get a document if there is an initial value
+  const [value, loading, error] = useDocument(
+    firebase.firestore().doc("things/" + objectId),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true }
+    }
+  );
+```
 
 ## Adding Or Updating a Specific Thing
 
@@ -23,7 +46,7 @@ if editing then we use the firebase-hooks to get the specific object using the
     }
   );
 ```
-
+When saving the thing, determine if it is a new object or an existing object by checking to see if there was an `initialValue` provided as a property. If there was, then we have an object id so we need to update the object and not create a new object
 ```javascript
   /**
    * on save determine if it is a new object or an existing object
@@ -49,4 +72,19 @@ if editing then we use the firebase-hooks to get the specific object using the
   ```
 
 ## Deleting A Specific Thing
-
+There is no firebase-hook to delete an object, we just used the firebase javascript api to remove the object
+```javascript
+  /**
+   * deletes item from firebase database using the id
+   * of teh object
+   *
+   * @param {*} id
+   */
+  const doDelete = id => {
+    firebase
+      .firestore()
+      .collection("things")
+      .doc(id)
+      .delete();
+  };
+  ```
