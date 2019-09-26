@@ -39,9 +39,7 @@ function AddThing({ initialValue, clear }) {
       setThing("");
       clear();
     } else {
-      await collectionRef
-        .doc(initialValue)
-        .add({ name: thing, createdOn: new Date().getTime() });
+      await collectionRef.add({ name: thing, createdOn: new Date().getTime() });
       setThing("");
       clear();
     }
