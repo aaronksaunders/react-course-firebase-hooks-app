@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import firebase from "firebase";
 // https://github.com/CSFrequency/react-firebase-hooks
 import { useDocument } from "react-firebase-hooks/firestore";
+import { IonButton, IonInput, IonItem } from "@ionic/react";
 
 /**
  *
@@ -48,31 +49,23 @@ function AddThing({ initialValue, clear }) {
   };
 
   return (
-    <div style={{ backgroundColor: "lightGrey", padding: 10 }}>
-      <h4>Add A Thing</h4>
-      <input
-        value={thing}
-        onChange={e => setThing(e.target.value)}
-        style={{
-          fontSize: 14,
-          backgroundColor: "lightGrey",
-          padding: 4,
-          width: "94%"
-        }}
-      />
-      <button style={{ fontSize: 14, marginTop: 8 }} onClick={onSave}>
+    <>
+      <IonItem>
+        <IonInput value={thing} onInput={e => setThing(e.target.value)} />
+      </IonItem>
+      <IonButton style={{ marginTop: 8 }} onClick={onSave}>
         SAVE
-      </button>
-      <button
-        style={{ fontSize: 14, marginTop: 8 }}
+      </IonButton>
+      <IonButton
+        style={{ marginTop: 8 }}
         onClick={() => {
           setThing("");
           clear();
         }}
       >
         RESET
-      </button>
-    </div>
+      </IonButton>
+    </>
   );
 }
 

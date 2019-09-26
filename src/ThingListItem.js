@@ -1,16 +1,45 @@
-import React  from "react";
+import React from "react";
 import "./App.css";
+import {
+  IonButton,
+  IonItem,
+  IonLabel,
+  IonText,
+  IonItemSliding,
+  IonItemOption,
+  IonItemOptions,
+  IonIcon
+} from "@ionic/react";
+import { document, trash } from "ionicons/icons";
 export default function ThingListItem({ doEdit, doDelete, doc }) {
-    let data = doc.data();
-    return (
-      <div className="thing-wrapper">
-        <div className="thing-title">{data.name}</div>
-        <div className="thing-sub-title">{new Date(data.createdOn) + ""}</div>
-        <div className="thing-id">{doc.id}</div>
-        <p>
-          <button onClick={() => doEdit(doc.id)}>EDIT</button>
-          <button onClick={() => doDelete(doc.id)}>DELETE</button>
-        </p>
-      </div>
-    );
-  }
+  let data = doc.data();
+
+  return (
+    <IonItemSliding>
+      <IonItem>
+        <IonLabel class="ion-text-wrap">
+          <IonText className="thing-title">
+            <div>{data.name}</div>
+          </IonText>
+          <IonText className="thing-sub-title">
+            <div>{new Date(data.createdOn) + ""}</div>
+          </IonText>
+          <IonText className="thing-id">{doc.id}</IonText>
+        </IonLabel>
+        <div></div>
+      </IonItem>
+      <IonItemOptions side="end">
+        <IonItemOption
+          onClick={() => {
+            doEdit(doc.id);
+          }}
+        >
+          <IonIcon slot="icon-only" icon={document}></IonIcon>
+        </IonItemOption>
+        <IonItemOption color="danger" onClick={() => doDelete(doc.id)}>
+          <IonIcon slot="icon-only" icon={trash}></IonIcon>
+        </IonItemOption>
+      </IonItemOptions>
+    </IonItemSliding>
+  );
+}
