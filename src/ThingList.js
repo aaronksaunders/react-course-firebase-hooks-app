@@ -37,7 +37,8 @@ export default function ThingList({ doEdit }) {
 
   return (
     <>
-      <h3>Things Collection</h3>
+      {error && <strong>Error: {error}</strong>}
+      <h3>Things Collection{loading && <span> Loading...</span>}</h3>
       {value &&
         value.docs.map(doc => {
           return (
