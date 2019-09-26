@@ -4,9 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Sample app integrating firebase with a react application using react hooks api and [React Firebase Hooks](https://github.com/CSFrequency/react-firebase-hooks) - A set of reusable [react hooks](https://reactjs.org/docs/hooks-intro.html) for [Firebase](https://firebase.google.com/docs/web/setup?authuser=0).
 
-<div>
-<img src="IMG_4425.png" width=600 />
-<img src="IMG_4424.png" width=600 />
+<div  style="padding-right: 10px">
+<img src="./IMG_4425.PNG" width=300/>
+  </div>
+<img src="./IMG_4424.PNG" width=300 />
 </div>
 
 ## Getting A Collecting of Things
