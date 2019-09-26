@@ -13,17 +13,15 @@ import Login from "./Login";
 // initialize firebase using properties on firebase console
 // https://firebase.google.com/docs/web/setup?authuser=0
 //
-var firebaseConfig = {
-
-};
+var firebaseConfig = {};
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 /**
  * checks to make sure there is a user otherwise
  * redirect to the login route
- * 
- * @param {*} param0 
+ *
+ * @param {*} param0
  */
 const ProtectedRoute = ({ component: Component, ...rest }) => (
   <Route

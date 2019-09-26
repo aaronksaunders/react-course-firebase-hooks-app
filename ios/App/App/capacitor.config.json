@@ -1,0 +1,7 @@
+{
+  "appId": "com.fiwic.thingapp",
+  "appName": "thingapp",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "build"
+}
