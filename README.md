@@ -104,13 +104,21 @@ const doDelete = id => {
 ### Add Capacitor (https://capacitor.ionicframework.com) to Project:
 
 ```
-npm install --save @capacitor/core @capacitor/cli / yarn add  @capacitor/core @capacitor/cli
+npm install --save @capacitor/core @capacitor/cli
+```
+OR
+```
+yarn add  @capacitor/core @capacitor/cli
 ```
 
 ### Package up app for build:
 
 ```
-npm run build / yarn run build
+npm run build
+```
+OR
+```
+yarn run build
 ```
 
 ### Initialize Capacitor with your app information.
