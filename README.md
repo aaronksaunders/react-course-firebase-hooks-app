@@ -1,6 +1,12 @@
 ## react-course-firebase-hooks-app
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+> Make sure you check the branches, there are different feature implemented in the branches
+> - Master - implements react firebase hooks for reading and writing data to firebase
+> - With Authentication - implements a Firebase Login Flow
+> - Capacitor Ionic - implements the solution using ionic framework components and capacitor for mobile deployment
+> - Capacitor - implements the solution using capacitor for mobile deployment
+
 Sample app integrating firebase with a react application using react hooks api and [React Firebase Hooks](https://github.com/CSFrequency/react-firebase-hooks) - A set of reusable [react hooks](https://reactjs.org/docs/hooks-intro.html) for [Firebase](https://firebase.google.com/docs/web/setup?authuser=0).
 
 <img src="Screen Shot 2019-09-25 at 1.59.32 AM.png" width=600 />
